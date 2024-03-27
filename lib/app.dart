@@ -5,6 +5,7 @@ import 'package:flutter_login/authentication/authentication.dart';
 import 'package:flutter_login/home/home.dart';
 import 'package:flutter_login/login/login.dart';
 import 'package:flutter_login/splash/splash.dart';
+import 'package:flutter_login/timer/view/timer_page.dart';
 import 'package:user_repository/user_repository.dart';
 
 class App extends StatefulWidget {
@@ -68,7 +69,7 @@ class _AppViewState extends State<AppView> {
             switch (state.status) {
               case AuthenticationStatus.authenticated:
                 _navigator.pushAndRemoveUntil<void>(
-                  HomePage.route(),
+                  TimerPage.route(),
                   (route) => false,
                 );
               case AuthenticationStatus.unauthenticated:
